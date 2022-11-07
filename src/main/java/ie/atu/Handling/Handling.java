@@ -1,4 +1,5 @@
 package ie.atu.Handling;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Handling {
@@ -10,14 +11,17 @@ public class Handling {
                 int mynum = myscan.nextInt();
 
 
-                if (mynum <= 9 || mynum > 0) {
+                if (mynum <= 9 && mynum > 0) {
                     System.out.println("You entered" + mynum);
 
                 } else {
                     System.out.println("Not a valid number");
                 }
-            } catch (Exception e) {
-                System.out.println("Error Received, try again");
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Caught Execption");
+
             }
         }
     }
